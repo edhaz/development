@@ -7,11 +7,15 @@
         {% else %}
         <title>Welcome to Microblog</title>
         {% endif %}
+        <style type="text/css">
+            a.nounderline {text-decoration: none; }
+        </style>
     </head>
     <body>
         <div>
             Microblog:
             <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('explore') }}">Explore</a>
             {% if current_user.is_anonymous %}
             <a href="{{ url_for('login') }}">Login</a>
             {% else %}

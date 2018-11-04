@@ -2,3 +2,6 @@ __pycache__
 .DS_Store
 venv_dev
 .idea
+migrations
+logs
+app.db

@@ -1,4 +1,4 @@
-2018-11-04 14:00:20,197 ERROR: Exception on / [GET] [in /Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/flask/app.py:1761]
+2018-11-04 14:01:23,415 ERROR: Exception on /index [GET] [in /Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -32,8 +32,8 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "/Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "/Users/ed/Projects/Website/development/app/templates/index.html", line 5, in template
-    {% if form $}
+  File "/Users/ed/Projects/Website/development/app/templates/index.html", line 10, in template
+    {{ form.post(cols=32, rows=4 }}<br>
   File "/Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/jinja2/environment.py", line 497, in _parse
     return Parser(self, source, name, encode_filename(filename)).parse()
   File "/Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/jinja2/parser.py", line 901, in parse
@@ -50,14 +50,44 @@ Traceback (most recent call last):
     rv = self.parse_statement()
   File "/Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/jinja2/parser.py", line 130, in parse_statement
     return getattr(self, 'parse_' + self.stream.current.value)()
-  File "/Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/jinja2/parser.py", line 211, in parse_if
-    node.test = self.parse_tuple(with_condexpr=False)
+  File "/Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/jinja2/parser.py", line 212, in parse_if
+    node.body = self.parse_statements(('name:elif', 'name:else',
+  File "/Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/jinja2/parser.py", line 165, in parse_statements
+    result = self.subparse(end_tokens)
+  File "/Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/jinja2/parser.py", line 875, in subparse
+    add_data(self.parse_tuple(with_condexpr=True))
   File "/Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/jinja2/parser.py", line 620, in parse_tuple
     args.append(parse())
-  File "/Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/jinja2/parser.py", line 612, in <lambda>
-    parse = lambda: self.parse_expression(with_condexpr=False)
-  File "/Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/jinja2/parser.py", line 433, in parse_expression
-    return self.parse_or()
+  File "/Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/jinja2/parser.py", line 432, in parse_expression
+    return self.parse_condexpr()
+  File "/Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/jinja2/parser.py", line 437, in parse_condexpr
+    expr1 = self.parse_or()
+  File "/Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/jinja2/parser.py", line 450, in parse_or
+    left = self.parse_and()
+  File "/Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/jinja2/parser.py", line 459, in parse_and
+    left = self.parse_not()
+  File "/Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/jinja2/parser.py", line 470, in parse_not
+    return self.parse_compare()
+  File "/Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/jinja2/parser.py", line 474, in parse_compare
+    expr = self.parse_math1()
+  File "/Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/jinja2/parser.py", line 496, in parse_math1
+    left = self.parse_concat()
+  File "/Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/jinja2/parser.py", line 507, in parse_concat
+    args = [self.parse_math2()]
+  File "/Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/jinja2/parser.py", line 517, in parse_math2
+    left = self.parse_pow()
+  File "/Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/jinja2/parser.py", line 528, in parse_pow
+    left = self.parse_unary()
+  File "/Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/jinja2/parser.py", line 547, in parse_unary
+    node = self.parse_postfix(node)
+  File "/Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/jinja2/parser.py", line 676, in parse_postfix
+    node = self.parse_call(node)
+  File "/Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/jinja2/parser.py", line 785, in parse_call
+    value = self.parse_expression()
+  File "/Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/jinja2/parser.py", line 432, in parse_expression
+    return self.parse_condexpr()
+  File "/Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/jinja2/parser.py", line 437, in parse_condexpr
+    expr1 = self.parse_or()
   File "/Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/jinja2/parser.py", line 450, in parse_or
     left = self.parse_and()
   File "/Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/jinja2/parser.py", line 459, in parse_and
@@ -76,13 +106,13 @@ Traceback (most recent call last):
     left = self.parse_unary()
   File "/Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/jinja2/parser.py", line 546, in parse_unary
     node = self.parse_primary()
-  File "/Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/jinja2/parser.py", line 562, in parse_primary
+  File "/Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/jinja2/parser.py", line 572, in parse_primary
     next(self.stream)
   File "/Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/jinja2/lexer.py", line 359, in __next__
     self.current = next(self._iter)
   File "/Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/jinja2/lexer.py", line 562, in wrap
     for lineno, token, value in stream:
-  File "/Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/jinja2/lexer.py", line 739, in tokeniter
-    name, filename)
-jinja2.exceptions.TemplateSyntaxError: unexpected char '$' at 108
-2018-11-04 14:01:17,214 INFO: Microblog startup [in /Users/ed/Projects/Website/development/app/__init__.py:45]
+  File "/Users/ed/Projects/Website/development/venv_dev/lib/python3.7/site-packages/jinja2/lexer.py", line 690, in tokeniter
+    filename)
+jinja2.exceptions.TemplateSyntaxError: unexpected '}', expected ')'
+2018-11-04 14:02:08,837 INFO: Microblog startup [in /Users/ed/Projects/Website/development/app/__init__.py:45]

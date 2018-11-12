@@ -1,3 +1,3 @@
-A place for testing out new technologies.
+# Welcome to Microblog!
 
-Currently working on a Flask tutorial.
+This is an example application featured in my [Flask Mega-Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world). See the tutorial for instructions on how to work with it.
